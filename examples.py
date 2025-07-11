@@ -7,5 +7,4 @@ for i in range(0, 3):
     # Display the OBB bounding boxes with labels
     ic.display_obb_with_labels(image_path='generated_ImageLabel/generated_image.png', label_path='generated_ImageLabel/generated_image.txt')
 
-
 # %%
