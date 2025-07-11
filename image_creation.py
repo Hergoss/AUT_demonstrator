@@ -316,7 +316,7 @@ def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_
     # 1) Create the screw canvas and label
     canvas = create_screws_CanvasAndLabel(mask_dir, label_path, number_generated_objects)
     # 2) Create a background image with random shapes
-    if random.random() < 0.5:
+    if random.random() < 0.7:
         background_image = bg_creation.create_simpleBackground_image(num_shapes=30)
     else:
         background_image = bg_creation.create_ObjectBackground_image(background_path='Backgrounds')

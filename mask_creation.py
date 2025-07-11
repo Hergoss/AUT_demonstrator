@@ -63,7 +63,7 @@ for filename in os.listdir(images_folder):
 ################ make masks and set up directory 
 ################
 # Create a directory for masks
-to_be_masked = gray_images[0]
+to_be_masked = gray_images[3]
 output_dir = 'masks_vorbereitet'
 os.makedirs(output_dir, exist_ok=True)
 minimum_size_mask = 40  # Minimum size for masks ...x... pixels
