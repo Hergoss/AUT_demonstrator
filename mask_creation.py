@@ -25,10 +25,14 @@ for filename in os.listdir(images_folder):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
         img_path = os.path.join(images_folder, filename)
         img = io.imread(img_path)
-        if img.ndim == 3:  # Color image
+
+        if img.ndim == 3:
+            if img.shape[2] == 4:
+                img = img[:, :, :3]  # Drop alpha channel
             gray_img = color.rgb2gray(img)
-        else:  # Already grayscale
-            gray_img = img
+        else:
+            gray_img = img  # Already grayscale
+
         gray_images.append(gray_img)
 #%%
 # # Apply a threshold of 0.6 to the first image
@@ -63,7 +67,7 @@ for filename in os.listdir(images_folder):
 ################ make masks and set up directory 
 ################
 # Create a directory for masks
-to_be_masked = gray_images[3]
+to_be_masked = gray_images[0]
 output_dir = 'masks_vorbereitet'
 os.makedirs(output_dir, exist_ok=True)
 minimum_size_mask = 40  # Minimum size for masks ...x... pixels

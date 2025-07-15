@@ -203,7 +203,6 @@ def create_screws_CanvasAndLabel(mask_dir, label_path, number_generated_objects=
         })
 
     # 4) Create a single label file in YOLOv8 OBB 8 points format using mask image name as label
-
     with open(label_path, 'w') as f:
         for info in placed_info:
             mask = info['mask']
@@ -296,7 +295,7 @@ def create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_obj
 
 
 # %%
-def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_name = 'generated_image', number_generated_objects=40):
+def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_name = 'generated_image', number_generated_objects=40, ImageSave=False):
     """Create images with screws
     Args:
         mask_dir (str): Directory containing the mask images
@@ -339,8 +338,9 @@ def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_
     blended_image = np.clip(blended_image + noise, 0, 255).astype(np.uint8)
 
 
-    # 3) Save and plot this image
-    io.imsave(generatied_imagePath, blended_image)
+    # 3) Save the image
+    if ImageSave:
+        io.imsave(generatied_imagePath, blended_image)
 
     return blended_image
 
