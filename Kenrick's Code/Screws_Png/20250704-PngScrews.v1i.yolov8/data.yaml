@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 14
+names: ['M4-12mm', 'M4-16mm', 'M4-20mm', 'M4-8mm', 'M4-Nut', 'M4-Washer', 'M6-12mm', 'M6-16mm', 'M6-20mm', 'M6-8mm', 'M6-Nut', 'M6-Washer', 'Standing-Nut', 'Standing-Screw']
+
+roboflow:
+  workspace: demo-test-hurkw
+  project: 20250704-pngscrews
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/demo-test-hurkw/20250704-pngscrews/dataset/1
