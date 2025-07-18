@@ -9,6 +9,11 @@ from datetime import datetime
 
 class TrainingImageGenerator:
     def __init__(self, images_dir="./train/images", labels_dir="./train/labels", use_noisy_background=False, noise_intensity=0.3):
+        # Image Directories based on current file path
+        self.current_path = Path(__file__).parent
+        images_dir = self.current_path / images_dir
+        labels_dir = self.current_path / labels_dir
+
         self.images_dir = Path(images_dir)
         self.labels_dir = Path(labels_dir)
         self.canvas_width = 3076
@@ -821,8 +826,8 @@ def main():
         
         # Initialize generator
         generator = TrainingImageGenerator(
-            images_dir="./train/images",
-            labels_dir="./train/labels",
+            images_dir="./20250715-PngScrews.v1i.yolov8/train/images",
+            labels_dir="./20250715-PngScrews.v1i.yolov8/train/labels",
             use_noisy_background=use_noisy_background,
             noise_intensity=noise_intensity
         )
