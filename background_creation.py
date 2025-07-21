@@ -1,21 +1,15 @@
 #%%
 import os
 from skimage import io, color
-from skimage import feature
 import matplotlib.pyplot as plt
-from skimage import filters, morphology, measure
 import numpy as np
-from skimage.measure import find_contours
 from skimage.draw import polygon
-from skimage.measure import regionprops
-from shapely.geometry import Polygon
-import math
 import random
 import glob
-from skimage.transform import rotate
 import numpy as np
 import matplotlib.pyplot as plt
-from skimage.draw import polygon
+from skimage.draw import polygon, disk, ellipse
+from skimage.transform import resize
 
 
 if __name__ == "__main__":
@@ -55,13 +49,12 @@ if __name__ == "__main__":
                             image[yy, xx] = color
 
         elif shape_type == 'ellipse':
-            cy, cx = np.random.randint(0, height-1), np.random.randint(0, width-1)
+
+            cy, cx = np.random.randint(0, height - 1), np.random.randint(0, width - 1)
             ry, rx = np.random.randint(30, 200), np.random.randint(30, 200)
-            angle = np.random.uniform(0, 2*np.pi)
-            y, x = np.ogrid[:height, :width]
-            ellipse_mask = (((((x - cx) * np.cos(angle) + (y - cy) * np.sin(angle)) / rx) ** 2 +
-                            (((x - cx) * np.sin(angle) - (y - cy) * np.cos(angle)) / ry) ** 2) <= 1)
-            image[ellipse_mask] = color
+            orientation = np.random.uniform(0, 2 * np.pi)
+            rr, cc = ellipse(cy, cx, ry, rx, shape=image.shape, rotation=orientation)
+            image[rr, cc] = color
 
         elif shape_type == 'polygon':
             num_vertices = np.random.randint(3, 8)
@@ -106,7 +99,7 @@ def create_simpleBackground_image(num_shapes=20):
     image = np.ones((height, width, 3), dtype=np.uint8) * np.array(background_color, dtype=np.uint8)
 
     for _ in range(num_shapes):
-        shape_type = np.random.choice(['rectangle', 'circle', 'ellipse', 'polygon'])
+        shape_type = np.random.choice(['rectangle', 'ellipse', 'polygon'])
         color = [np.random.randint(180, 220) for _ in range(3)]  # random gray
 
         if shape_type == 'rectangle':
@@ -135,16 +128,11 @@ def create_simpleBackground_image(num_shapes=20):
             image[rr, cc] = color
 
         elif shape_type == 'circle':
+            # Use the highly optimized disk function from scikit-image
             radius = np.random.randint(30, 200)
-            cy, cx = np.random.randint(radius, height-radius), np.random.randint(radius, width-radius)
-            y, x = np.ogrid[-radius:radius, -radius:radius]
-            mask = x**2 + y**2 <= radius**2
-            for dy in range(-radius, radius):
-                for dx in range(-radius, radius):
-                    if dx**2 + dy**2 <= radius**2:
-                        yy, xx = cy + dy, cx + dx
-                        if 0 <= yy < height and 0 <= xx < width:
-                            image[yy, xx] = color
+            cy, cx = np.random.randint(radius, height - radius), np.random.randint(radius, width - radius)
+            rr, cc = disk((cy, cx), radius, shape=image.shape)
+            image[rr, cc] = color
 
         elif shape_type == 'ellipse':
             cy, cx = np.random.randint(0, height-1), np.random.randint(0, width-1)
@@ -193,10 +181,17 @@ def create_ObjectBackground_image(background_path='Backgrounds'):
     background_image = io.imread(chosen_image_path)
 
     # Resize the background image to the desired canvas size
-    from skimage.transform import resize
-    background_image = resize(background_image, (height, width, 3), anti_aliasing=True)
+    # background_image = resize(background_image, (height, width, 3), anti_aliasing=True)
+    background_image = tile_image_to_size(background_image, height, width)
     background_image = (background_image * 255).astype(np.uint8)
+
     return background_image
 
+def tile_image_to_size(image, target_height, target_width):
+    h, w, c = image.shape
+    reps_y = -(-target_height // h)  # Ceiling division
+    reps_x = -(-target_width // w)
+    tiled = np.tile(image, (reps_y, reps_x, 1))
+    return tiled[:target_height, :target_width, :]
 
 # %%
