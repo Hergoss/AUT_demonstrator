@@ -238,7 +238,7 @@ def create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_obj
     """Create images with screws
     Args:
         mask_dir (str): Directory containing the mask images
-        number_generated_objects (int): Number of screws/nuts/washers to be placed in the new image
+        number_generated_objects (int): Number of screws/nuts/washers (that are not a class) to be placed in the new image
     returns:
         np.ndarray: The generated screw canvas.
     """
@@ -296,7 +296,7 @@ def create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_obj
 
 
 # %%
-def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_name = 'generated_image', number_generated_objects=40, ImageSave=False):
+def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_name = 'generated_image', number_generated_objects=40, number_generated_otherScrews=45, number_generated_shapes=10, disturbanceBackground=False, ImageSave=False):
     """Create images with screws
     Args:
         mask_dir (str): Directory containing the mask images
@@ -304,6 +304,10 @@ def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_
         output_dir (str): Directory to save the generated images
         image_name (str): Name of the generated image and label file
         number_generated_objects (int): Number of screws/nuts/washers to be placed in the new image
+        number_generated_otherScrews (int): Number of other screws/nuts/washers to be placed in the new image
+        number_generated_shapes (int): Number of random shapes to be placed in the new image
+        disturbanceBackground (bool): Whether to add a disturbance background with random non technical objectes
+        ImageSave (bool): Whether to save the generated image
     Returns:
         np.ndarray: The generated screw image.
     """
@@ -322,44 +326,58 @@ def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_
 
     step2_start = time.time()
     # 2) Create a background image with random shapes
-    if np.random.random() < 0.5:
-        background_image = bg_creation.create_simpleBackground_image(num_shapes=30)
+    if disturbanceBackground:
+        if np.random.random() < 0.5:
+            background_image = bg_creation.create_simpleBackground_image(num_shapes=number_generated_shapes)
+        else:
+            background_image = bg_creation.create_ObjectBackground_image(background_path='Backgrounds')
     else:
-        background_image = bg_creation.create_ObjectBackground_image(background_path='Backgrounds')
+        background_image = bg_creation.create_simpleBackground_image(num_shapes=number_generated_shapes)
     step2_end = time.time()
-    print(f"Step 2 (create background image) took: {step2_end - step2_start:.2f} seconds")
+    print(f"Step 2 (create background canvas) took: {step2_end - step2_start:.2f} seconds")
 
     step2_5_start = time.time()
     # 2.5) Add other screws/nuts/washers to the background image
-    disturbance_canvas = create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_objects=50)
+    disturbance_canvas = create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_objects=number_generated_otherScrews)
     background_image = np.where(disturbance_canvas > 0, disturbance_canvas, background_image)
     step2_5_end = time.time()
-    print(f"Step 2.5 (add disturbance canvas) took: {step2_5_end - step2_5_start:.2f} seconds")
+    print(f"Step 2.5 (create and add other screws to backgraound canvas) took: {step2_5_end - step2_5_start:.2f} seconds")
 
-    step3_start = time.time()
-    # 3) integrate the background image with the canvas
+    # Step 3a: Integrate the background image with the canvas
+    step3a_start = time.time()
     blending_mask = canvas.sum(axis=-1, keepdims=True) > 0
     blended_image = np.where(blending_mask, canvas, background_image)
+    step3a_end = time.time()
+    print(f"Step 3a (add screw canvas to background canvas) took: {step3a_end - step3a_start:.2f} seconds")
 
-    #  Apply a Gaussian filter to the blended image for smoothing
+    # Step 3b: Apply Gaussian smoothing
+    step3b_start = time.time()
     blur_intensity = np.random.uniform(0.5, 2)  # Random blur intensity
-    ksize = int(6 * blur_intensity) | 1
+    ksize = int(6 * blur_intensity) | 1         # Ensure kernel size is odd
     blended_image = cv2.GaussianBlur(blended_image, (ksize, ksize), blur_intensity)
+    step3b_end = time.time()
+    print(f"Step 3b (smoothing) took: {step3b_end - step3b_start:.2f} seconds")
 
-    #  Add random noise to the blended image
-    noise = np.random.normal(0, 5, blended_image.shape) # Mean 0, Std Dev 5
-    blended_image = np.clip(blended_image.astype(np.float32) + noise, 0, 255).astype(np.uint8)
-    step3_end = time.time()
-    print(f"Step 3 (blending, smoothing, noise) took: {step3_end - step3_start:.2f} seconds")
+    # Step 3c: Add random noise
+    step3c_start = time.time()
+    blended_image = blended_image.astype(np.float32)  # Convert to float for noise addition
+    noise = np.random.normal(0, 5, blended_image.shape)
+    blended_image += noise
+    np.clip(blended_image, 0, 255, out=blended_image)
+    blended_image = blended_image.astype(np.uint8)
+    step3c_end = time.time()
+    print(f"Step 3c (adding noise) took: {step3c_end - step3c_start:.2f} seconds")
+
 
 
     # 3) Save the image
     if ImageSave:
         io.imsave(generatied_imagePath, blended_image)
 
-    return blended_image
     end_time = time.time()
-    print(f"Total create_screwImage execution time: {end_time - start_time:.2f} seconds")
+    print(f"Total time taken: {end_time - start_time:.2f} seconds")
+    return blended_image
+
 
 def display_obb_with_labels(image_path, label_path):
     """

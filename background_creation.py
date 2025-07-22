@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage.draw import polygon, disk, ellipse
 from skimage.transform import resize
+import cv2
 
 
 if __name__ == "__main__":
@@ -80,83 +81,74 @@ if __name__ == "__main__":
 
 
 # %%
+
+
 def create_simpleBackground_image(num_shapes=20):
-    """    Create a background image with random shapes.
-    This function generates a background image with random shapes such as rectangles, circles, ellipses, and polygons.
+    """
+    Create a background image with random shapes using OpenCV.
+
     Args:
-        num_shapes (int): Number of random shapes (set this variable as needed)
-    
+        num_shapes (int): Number of random shapes to draw.
+
     Returns:
         np.ndarray: The generated background image.
     """
-
     # Image size
     height, width = 1852, 3076
 
     # Create almost white (light gray) background
-    background_int = np.random.randint(1, 255)
-    background_color = [background_int, background_int, background_int]  # gray background
-    image = np.ones((height, width, 3), dtype=np.uint8) * np.array(background_color, dtype=np.uint8)
+    background_int = np.random.randint(230, 256)
+    background_color = [background_int] * 3
+    image = np.full((height, width, 3), background_color, dtype=np.uint8)
 
     for _ in range(num_shapes):
-        shape_type = np.random.choice(['rectangle', 'ellipse', 'polygon'])
-        color = [np.random.randint(180, 220) for _ in range(3)]  # random gray
+        shape_type = np.random.choice(['rectangle', 'circle', 'ellipse', 'polygon'])
+        color = [np.random.randint(180, 220) for _ in range(3)]  # light gray color
 
         if shape_type == 'rectangle':
             max_width = 400
             max_height = 400
-
-            # Choose top-left point ensuring there's space for the rectangle
             x1 = np.random.randint(0, width - max_width)
             y1 = np.random.randint(0, height - max_height)
-
-            # Add random width/height up to max
             rect_width = np.random.randint(50, max_width)
             rect_height = np.random.randint(50, max_height)
-
             x2 = x1 + rect_width
             y2 = y1 + rect_height
-
-            # Ensure x2, y2 still within bounds
-            x2 = min(x2, width - 1)
-            y2 = min(y2, height - 1)
-
-            # Draw rectangle
-            rr, cc = polygon([y1, y1, y2, y2], [x1, x2, x2, x1])
-            rr = np.clip(rr, 0, height - 1)
-            cc = np.clip(cc, 0, width - 1)
-            image[rr, cc] = color
+            cv2.rectangle(image, (x1, y1), (x2, y2), color, thickness=-1)
 
         elif shape_type == 'circle':
-            # Use the highly optimized disk function from scikit-image
             radius = np.random.randint(30, 200)
-            cy, cx = np.random.randint(radius, height - radius), np.random.randint(radius, width - radius)
-            rr, cc = disk((cy, cx), radius, shape=image.shape)
-            image[rr, cc] = color
+            cx = np.random.randint(radius, width - radius)
+            cy = np.random.randint(radius, height - radius)
+            cv2.circle(image, (cx, cy), radius, color, thickness=-1)
 
         elif shape_type == 'ellipse':
-            cy, cx = np.random.randint(0, height-1), np.random.randint(0, width-1)
-            ry, rx = np.random.randint(30, 200), np.random.randint(30, 200)
-            angle = np.random.uniform(0, 2*np.pi)
-            y, x = np.ogrid[:height, :width]
-            ellipse_mask = (((((x - cx) * np.cos(angle) + (y - cy) * np.sin(angle)) / rx) ** 2 +
-                            (((x - cx) * np.sin(angle) - (y - cy) * np.cos(angle)) / ry) ** 2) <= 1)
-            image[ellipse_mask] = color
+            cx = np.random.randint(0, width)
+            cy = np.random.randint(0, height)
+            ax1 = np.random.randint(30, 200)
+            ax2 = np.random.randint(30, 200)
+            angle = np.random.randint(0, 360)
+            cv2.ellipse(image, (cx, cy), (ax1, ax2), angle, 0, 360, color, thickness=-1)
 
         elif shape_type == 'polygon':
             num_vertices = np.random.randint(3, 8)
-            center_x = np.random.randint(0, width-1)
-            center_y = np.random.randint(0, height-1)
-            angles = np.linspace(0, 2*np.pi, num_vertices, endpoint=False)
+            center_x = np.random.randint(0, width)
+            center_y = np.random.randint(0, height)
+            angles = np.linspace(0, 2 * np.pi, num_vertices, endpoint=False)
             radii = np.random.randint(40, 200, size=num_vertices)
-            xs = center_x + (radii * np.cos(angles)).astype(int)
-            ys = center_y + (radii * np.sin(angles)).astype(int)
-            xs = np.clip(xs, 0, width-1)
-            ys = np.clip(ys, 0, height-1)
-            rr, cc = polygon(ys, xs)
-            image[rr, cc] = color
+            pts = np.array([
+                (
+                    int(center_x + r * np.cos(a)),
+                    int(center_y + r * np.sin(a))
+                )
+                for r, a in zip(radii, angles)
+            ], np.int32)
+            pts = np.clip(pts, [0, 0], [width - 1, height - 1])
+            pts = pts.reshape((-1, 1, 2))
+            cv2.fillPoly(image, [pts], color)
 
     return image
+
 # %%
 def create_ObjectBackground_image(background_path='Backgrounds'):
     """    Create a background image with random shapes.
