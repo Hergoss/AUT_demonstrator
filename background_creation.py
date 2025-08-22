@@ -171,9 +171,12 @@ def create_ObjectBackground_image(background_path='Backgrounds'):
     # Randomly choose one image from the background folder
     chosen_image_path = random.choice(image_files)
     background_image = io.imread(chosen_image_path)
+    print(f"Chosen background image: {chosen_image_path}")
+    if background_image.shape[2] == 4:  # Check if the image has an alpha channel
+        background_image = background_image[..., :3]  # Keep only RGB channels
 
     # Resize the background image to the desired canvas size
-    # background_image = resize(background_image, (height, width, 3), anti_aliasing=True)
+    background_image = resize(background_image, (1000, 1000, 3), anti_aliasing=True)
     background_image = tile_image_to_size(background_image, height, width)
     background_image = (background_image * 255).astype(np.uint8)
 

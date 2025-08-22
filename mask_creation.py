@@ -19,6 +19,7 @@ images_folder = 'images'
 
 # List to store grayscale images
 gray_images = []
+rgb_images = []
 
 # Read and convert images
 for filename in os.listdir(images_folder):
@@ -34,6 +35,7 @@ for filename in os.listdir(images_folder):
             gray_img = img  # Already grayscale
 
         gray_images.append(gray_img)
+        rgb_images.append(img)
 #%%
 # # Apply a threshold of 0.6 to the first image
 # threshold = 0.6
@@ -67,7 +69,8 @@ for filename in os.listdir(images_folder):
 ################ make masks and set up directory 
 ################
 # Create a directory for masks
-to_be_masked = gray_images[0]
+to_be_masked = gray_images[2]
+to_be_masked_rgb = rgb_images[2]
 output_dir = 'masks_vorbereitet'
 os.makedirs(output_dir, exist_ok=True)
 minimum_size_mask = 40  # Minimum size for masks ...x... pixels
@@ -109,6 +112,9 @@ plt.show()
 #####################
 ################## Mask Creation
 ####################
+# Set starting number for mask filenames
+start_mask_number = 600  # Change this to your desired starting number
+
 # Prepare masks for all contours larger than 40x40 pixels
 all_masks = []
 valid_contours = []
@@ -140,9 +146,8 @@ for i, outer_mask in enumerate(all_masks):
                     mask = mask - inner_mask
     mask = np.clip(mask, 0, 1)
     final_masks.append(mask)
-
-# Save cropped masked images
-for i, mask in enumerate(final_masks):
+    # Save cropped masked RGB images
+    mask_number = start_mask_number + i
     rr, cc = np.where(mask)
     if rr.size == 0 or cc.size == 0:
         continue  # skip empty masks
@@ -152,14 +157,16 @@ for i, mask in enumerate(final_masks):
     width = maxc - minc + 1
     if height < minimum_size_mask or width < minimum_size_mask:
         continue  # skip small masks
-    cropped_img = to_be_masked[minr:maxr+1, minc:maxc+1]
+    cropped_rgb = to_be_masked_rgb[minr:maxr+1, minc:maxc+1]
     cropped_mask = mask[minr:maxr+1, minc:maxc+1]
-    masked_img = cropped_img * cropped_mask
-    out_path = os.path.join(output_dir, f'mask_{i}.png')
-    io.imsave(out_path, (masked_img * 255).astype(np.uint8))
+    # Expand mask to 3 channels
+    cropped_mask_3c = np.stack([cropped_mask]*3, axis=-1)
+    masked_img = cropped_rgb * cropped_mask_3c
+    out_path = os.path.join(output_dir, f'mask_{mask_number}.png')
+    io.imsave(out_path, masked_img.astype(np.uint8))
 
 # Show one example if available
-example_path = os.path.join(output_dir, 'mask_0.png')
+example_path = os.path.join(output_dir, f'mask_{start_mask_number}.png')
 if os.path.exists(example_path):
     example = io.imread(example_path)
     plt.figure()
@@ -175,7 +182,7 @@ ax.imshow(to_be_masked, cmap='gray')
 for i, contour in enumerate(valid_contours):
     ax.plot(contour[:, 1], contour[:, 0], linewidth=1)
     centroid = np.mean(contour, axis=0)
-    mask_filename = f'mask_{i}.png'
+    mask_filename = f'mask_{start_mask_number + i}.png'
     ax.text(centroid[1], centroid[0], mask_filename, color='yellow', fontsize=8, ha='center', va='center')
 
 plt.title('Contours with Mask Filenames')
