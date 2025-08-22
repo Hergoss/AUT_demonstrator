@@ -1,0 +1,19 @@
+site_name: Demonstrator Docs
+
+
+theme:
+  name: "readthedocs"
+
+plugins:
+  - search   
+  - mkdocstrings
+
+features:
+  - embed-responsive
+
+nav:
+  - Overview: index.md
+  - Setup Guide: setup.md
+  - Usage Guide: user_guide.md
+  - Augmentation Guide: augmentation.md
+  - Training Guide: training.md

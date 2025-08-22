@@ -12,6 +12,6 @@
 - noise (not active)
 
 ## Example of generated images
-![example1.png](example1.png)
-![example2.png](example2.png)
+![docs\example1.png](example1.png)
+![docs\example2.png](example2.png)
 
