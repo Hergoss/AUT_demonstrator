@@ -1,18 +1,11 @@
 #%%
 import os
 from skimage import io, color
-from skimage import feature
 import matplotlib.pyplot as plt
-from skimage import filters, morphology, measure
+from skimage import filters, morphology
 import numpy as np
 from skimage.measure import find_contours
 from skimage.draw import polygon
-from skimage.measure import regionprops
-from shapely.geometry import Polygon
-import math
-import random
-import glob
-from skimage.transform import rotate
 
 # Path to the images folder
 images_folder = 'images'

@@ -1,19 +1,13 @@
 #%%
 import os
 from skimage import io, color
-from skimage import feature
 import matplotlib.pyplot as plt
-from skimage import filters, morphology, measure
 import numpy as np
 from skimage.measure import find_contours
-from skimage.draw import polygon
-from skimage.measure import regionprops
 from shapely.geometry import Polygon
-import math
 import random
 import glob
 from skimage.transform import rotate
-import cv2
 import time
 import background_creation as bg_creation
 

@@ -8,7 +8,7 @@ import random
 import glob
 import numpy as np
 import matplotlib.pyplot as plt
-from skimage.draw import polygon, disk, ellipse
+from skimage.draw import polygon, ellipse
 from skimage.transform import resize
 import cv2
 
