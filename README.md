@@ -1,4 +1,5 @@
 # Demo_Augmentation
+The documentation is at [github.com/Hergoss/AUT_demonstrator](https://Hergoss.github.io/AUT_demonstrator/)
 
 ## Getting started
 1) install skimage, cv2 in your environment
@@ -12,6 +13,6 @@
 - noise (not active)
 
 ## Example of generated images
-![docs\example1.png](example1.png)
-![docs\example2.png](example2.png)
+![example1.png](docs/example1.png)
+![example2.png](docs/example2.png)
 

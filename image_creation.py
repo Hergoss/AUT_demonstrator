@@ -14,6 +14,7 @@ import background_creation as bg_creation
 #%%
 def create_screws_CanvasAndLabel(mask_dir, label_path, number_generated_objects=30):
     """Create images with screws and YOLOv8 OBB labels.
+
     Args:
         mask_dir (str): Directory containing the mask images
         label_path (str): Path to save the label file
@@ -97,11 +98,12 @@ def create_screws_CanvasAndLabel(mask_dir, label_path, number_generated_objects=
 
 
 def create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_objects=30):
-    """Create images with screws
+    """Create images with screws.
+
     Args:
         mask_dir (str): Directory containing the mask images
         number_generated_objects (int): Number of screws/nuts/washers (that are not a class) to be placed in the new image
-    returns:
+    Returns:
         np.ndarray: The generated screw canvas.
     """
     # 1) Get mask image paths and names
@@ -154,7 +156,8 @@ def create_distrubance_Canvas(mask_dir='disturbance_masks', number_generated_obj
 
 # %%
 def create_screwImage(mask_dir='Masks', ouput_dir='generated_ImageLabel', image_name = 'generated_image', number_generated_objects=40, number_generated_otherScrews=45, number_generated_shapes=10, simpleBackground=False, ImageSave=False, Png=True):
-    """Create images with screws
+    """Create images with screws.
+    
     Args:
         mask_dir (str): Directory containing the mask images
         label_dir (str): Directory to save label and image file

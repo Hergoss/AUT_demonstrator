@@ -2,14 +2,19 @@ site_name: Demonstrator Docs
 
 
 theme:
-  name: "readthedocs"
-
-plugins:
-  - search   
-  - mkdocstrings
+  name: "material"
 
 features:
-  - embed-responsive
+  - navigation.expand
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
 
 nav:
   - Overview: index.md
