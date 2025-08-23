@@ -1,98 +1,536 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Augmentation Guide - Demonstrator Docs</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Augmentation Guide";
-        var mkdocs_page_input_path = "augmentation.md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../user_guide/">
+      
+      
+        <link rel="next" href="../training/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+    
+      
+        <title>Augmentation Guide - Demonstrator Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Demonstrator Docs
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../setup/">Setup Guide</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../user_guide/">Usage Guide</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Augmentation Guide</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#current-augementations">Current Augementations</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#example-of-generated-images">Example of generated images</a>
-    </li>
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../training/">Training Guide</a>
-                </li>
-              </ul>
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#augmentation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Demonstrator Docs" class="md-header__button md-logo" aria-label="Demonstrator Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Demonstrator Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Augmentation Guide
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Demonstrator Docs</a>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
         
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Augmentation Guide</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="augmentation-guide">Augmentation Guide</h1>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Demonstrator Docs" class="md-nav__button md-logo" aria-label="Demonstrator Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Demonstrator Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setup Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Usage Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Augmentation Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Augmentation Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#current-augementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Augementations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-generated-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of generated images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      image_creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.create_distrubance_Canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_distrubance_Canvas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.create_screwImage" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_screwImage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.create_screws_CanvasAndLabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_screws_CanvasAndLabel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.display_obb_with_labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      display_obb_with_labels
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Training Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#current-augementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Augementations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-generated-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of generated images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      image_creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.create_distrubance_Canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_distrubance_Canvas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.create_screwImage" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_screwImage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.create_screws_CanvasAndLabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_screws_CanvasAndLabel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image_creation.display_obb_with_labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      display_obb_with_labels
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="augmentation-guide">Augmentation Guide</h1>
 <h2 id="current-augementations">Current Augementations</h2>
 <ul>
-<li>background</li>
+<li>background objects (simple shapes and everyday objects)</li>
 <li>rotation, translation</li>
 <li>other screws</li>
 <li>blur (not active)</li>
@@ -101,51 +539,1071 @@
 <h2 id="example-of-generated-images">Example of generated images</h2>
 <p><img alt="example1.png" src="../example1.png" />
 <img alt="example2.png" src="../example2.png" /></p>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../user_guide/" class="btn btn-neutral float-left" title="Usage Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../training/" class="btn btn-neutral float-right" title="Training Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+<h2 id="functions">Functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="image_creation"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="image_creation.create_distrubance_Canvas" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;disturbance_masks&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Create images with screws.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>mask_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Directory containing the mask images</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;disturbance_masks&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>number_generated_objects</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of screws/nuts/washers (that are not a class) to be placed in the new image</p>
+              </div>
+            </td>
+            <td>
+                  <code>30</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    np.ndarray: The generated screw canvas.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>image_creation.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;disturbance_masks&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mask_dir (str): Directory containing the mask images</span>
+<span class="sd">        number_generated_objects (int): Number of screws/nuts/washers (that are not a class) to be placed in the new image</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: The generated screw canvas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1) Get mask image paths and names</span>
+    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+    <span class="n">mask_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mask_paths</span><span class="p">]</span>
+
+    <span class="c1"># 2) Create an empty RGB image of size 3076 x 1852</span>
+    <span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span> <span class="o">=</span> <span class="mi">1852</span><span class="p">,</span> <span class="mi">3076</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="c1"># 3) Choose random masks, randomly position and rotate them in the image</span>
+    <span class="n">num_masks</span> <span class="o">=</span> <span class="n">number_generated_objects</span>
+    <span class="n">chosen_indices</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask_paths</span><span class="p">)),</span> <span class="n">k</span><span class="o">=</span><span class="n">num_masks</span><span class="p">)</span>
+    <span class="n">placed_info</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">chosen_indices</span><span class="p">:</span>
+        <span class="n">mask_path</span> <span class="o">=</span> <span class="n">mask_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">mask_name</span> <span class="o">=</span> <span class="n">mask_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">mask_img</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">mask_path</span><span class="p">)</span>
+        <span class="c1"># Ensure mask is RGB</span>
+        <span class="k">if</span> <span class="n">mask_img</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">mask_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">mask_img</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">mask_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">mask_img</span> <span class="o">=</span> <span class="n">mask_img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">mask_h</span><span class="p">,</span> <span class="n">mask_w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mask_img</span><span class="o">.</span><span class="n">shape</span>
+
+        <span class="c1"># Random rotation</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
+        <span class="n">rotated_mask</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">mask_img</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">preserve_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">rot_h</span><span class="p">,</span> <span class="n">rot_w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">rotated_mask</span><span class="o">.</span><span class="n">shape</span>
+
+        <span class="c1"># Random position</span>
+        <span class="n">max_y</span> <span class="o">=</span> <span class="n">canvas_h</span> <span class="o">-</span> <span class="n">rot_h</span>
+        <span class="n">max_x</span> <span class="o">=</span> <span class="n">canvas_w</span> <span class="o">-</span> <span class="n">rot_w</span>
+        <span class="k">if</span> <span class="n">max_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">max_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># skip if mask doesn&#39;t fit</span>
+
+        <span class="n">rand_y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
+        <span class="n">rand_x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_x</span><span class="p">)</span>
+
+        <span class="c1"># Place mask on canvas using the actual intensity values</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">canvas</span><span class="p">[</span><span class="n">rand_y</span><span class="p">:</span><span class="n">rand_y</span><span class="o">+</span><span class="n">rot_h</span><span class="p">,</span> <span class="n">rand_x</span><span class="p">:</span><span class="n">rand_x</span><span class="o">+</span><span class="n">rot_w</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span>
+                <span class="n">canvas</span><span class="p">[</span><span class="n">rand_y</span><span class="p">:</span><span class="n">rand_y</span><span class="o">+</span><span class="n">rot_h</span><span class="p">,</span> <span class="n">rand_x</span><span class="p">:</span><span class="n">rand_x</span><span class="o">+</span><span class="n">rot_w</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span>
+                <span class="n">rotated_mask</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">canvas</span>
+</code></pre></div></td></tr></table></div>
+            </details>
     </div>
 
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../user_guide/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../training/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
 
-</body>
+<div class="doc doc-object doc-function">
+
+
+<h2 id="image_creation.create_screwImage" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">ouput_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Create images with screws.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>mask_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Directory containing the mask images</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Masks&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>label_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Directory to save label and image file</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>output_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Directory to save the generated images</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>image_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the generated image and label file</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;generated_image&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>number_generated_objects</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of screws/nuts/washers to be placed in the new image</p>
+              </div>
+            </td>
+            <td>
+                  <code>40</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>number_generated_otherScrews</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of other screws/nuts/washers to be placed in the new image</p>
+              </div>
+            </td>
+            <td>
+                  <code>45</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>number_generated_shapes</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of random shapes to be placed in the new image</p>
+              </div>
+            </td>
+            <td>
+                  <code>10</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>simpleBackground</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to add a simple white background (True) or with random non technical objectes (False)</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ImageSave</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to save the generated image</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>Png</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to save the generated image as PNG (True) or JPG (False)</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    np.ndarray: The generated screw image.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>image_creation.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">ouput_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span> <span class="o">=</span> <span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mask_dir (str): Directory containing the mask images</span>
+<span class="sd">        label_dir (str): Directory to save label and image file</span>
+<span class="sd">        output_dir (str): Directory to save the generated images</span>
+<span class="sd">        image_name (str): Name of the generated image and label file</span>
+<span class="sd">        number_generated_objects (int): Number of screws/nuts/washers to be placed in the new image</span>
+<span class="sd">        number_generated_otherScrews (int): Number of other screws/nuts/washers to be placed in the new image</span>
+<span class="sd">        number_generated_shapes (int): Number of random shapes to be placed in the new image</span>
+<span class="sd">        simpleBackground (bool): Whether to add a simple white background (True) or with random non technical objectes (False)</span>
+<span class="sd">        ImageSave (bool): Whether to save the generated image</span>
+<span class="sd">        Png (bool): Whether to save the generated image as PNG (True) or JPG (False)</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: The generated screw image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="c1"># setput image generation</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">)</span> <span class="c1">#  Label file path</span>
+    <span class="k">if</span> <span class="n">Png</span><span class="p">:</span>
+        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># If not PNG, save as JPG</span>
+        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>   
+
+    <span class="c1">#step1_start = time.time()</span>
+    <span class="c1"># 1) Create the screw canvas and label</span>
+    <span class="n">screw_canvas</span> <span class="o">=</span> <span class="n">create_screws_CanvasAndLabel</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="n">label_path</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="p">)</span>
+    <span class="c1">#step1_end = time.time()</span>
+    <span class="c1">#print(f&quot;Step 1 (create_screws_CanvasAndLabel) took: {step1_end - step1_start:.2f} seconds&quot;)</span>
+
+    <span class="c1">#step2_start = time.time()</span>
+    <span class="c1"># 2) Create a background image with random shapes</span>
+    <span class="k">if</span> <span class="n">simpleBackground</span><span class="p">:</span>
+            <span class="n">background_image</span> <span class="o">=</span> <span class="n">bg_creation</span><span class="o">.</span><span class="n">create_simpleBackground_image</span><span class="p">(</span><span class="n">num_shapes</span><span class="o">=</span><span class="n">number_generated_shapes</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">background_image</span> <span class="o">=</span> <span class="n">bg_creation</span><span class="o">.</span><span class="n">create_ObjectBackground_image</span><span class="p">(</span><span class="n">background_path</span><span class="o">=</span><span class="s1">&#39;Backgrounds&#39;</span><span class="p">)</span>
+    <span class="c1">#step2_end = time.time()</span>
+    <span class="c1">#print(f&quot;Step 2 (create background canvas) took: {step2_end - step2_start:.2f} seconds&quot;)</span>
+
+
+    <span class="c1"># step2_5_start = time.time()</span>
+    <span class="c1"># 2.5) Add other screws/nuts/washers to the background image</span>
+    <span class="n">disturbance_canvas</span> <span class="o">=</span> <span class="n">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;disturbance_masks&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="n">number_generated_otherScrews</span><span class="p">)</span>
+    <span class="c1"># Both disturbance_canvas and background_image are RGB, so blend per channel</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">disturbance_canvas</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">background_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">disturbance_canvas</span><span class="p">,</span> <span class="n">background_image</span><span class="p">)</span>
+    <span class="c1">#step2_5_end = time.time()</span>
+    <span class="c1">#print(f&quot;Step 2.5 (create and add other screws to backgraound canvas) took: {step2_5_end - step2_5_start:.2f} seconds&quot;)</span>
+
+    <span class="c1"># Step 3a: Integrate the background image with the canvas</span>
+    <span class="c1">#step3a_start = time.time()</span>
+    <span class="c1"># Both blending_mask and canvas are RGB images</span>
+    <span class="n">blending_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">screw_canvas</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">blended_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">blending_mask</span><span class="p">,</span> <span class="n">screw_canvas</span><span class="p">,</span> <span class="n">background_image</span><span class="p">)</span>
+    <span class="c1">#step3a_end = time.time()</span>
+    <span class="c1">#print(f&quot;Step 3a (add screw canvas to background canvas) took: {step3a_end - step3a_start:.2f} seconds&quot;)</span>
+
+    <span class="c1"># # Step 3b: Apply Gaussian smoothing</span>
+    <span class="c1"># step3b_start = time.time()</span>
+    <span class="c1"># blur_intensity = np.random.uniform(0.5, 2)  # Random blur intensity</span>
+    <span class="c1"># ksize = int(6 * blur_intensity) | 1         # Ensure kernel size is odd</span>
+    <span class="c1"># blended_image = cv2.GaussianBlur(blended_image, (ksize, ksize), blur_intensity)</span>
+    <span class="c1"># step3b_end = time.time()</span>
+    <span class="c1"># print(f&quot;Step 3b (smoothing) took: {step3b_end - step3b_start:.2f} seconds&quot;)</span>
+
+    <span class="c1"># # Step 3c: Add random noise</span>
+    <span class="c1"># step3c_start = time.time()</span>
+    <span class="c1"># blended_image = blended_image.astype(np.float32)  # Convert to float for noise addition</span>
+    <span class="c1"># noise = np.random.normal(0, 5, blended_image.shape)</span>
+    <span class="c1"># blended_image += noise</span>
+    <span class="c1"># np.clip(blended_image, 0, 255, out=blended_image)</span>
+    <span class="c1"># blended_image = blended_image.astype(np.uint8)</span>
+    <span class="c1"># step3c_end = time.time()</span>
+    <span class="c1"># print(f&quot;Step 3c (adding noise) took: {step3c_end - step3c_start:.2f} seconds&quot;)</span>
+
+
+
+    <span class="c1"># 3) Save the image</span>
+    <span class="k">if</span> <span class="n">ImageSave</span><span class="p">:</span>
+        <span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">generatied_imagePath</span><span class="p">,</span> <span class="n">blended_image</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image saved to </span><span class="si">{</span><span class="n">generatied_imagePath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total time taken: </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">blended_image</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="image_creation.create_screws_CanvasAndLabel" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_screws_CanvasAndLabel</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="n">label_path</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Create images with screws and YOLOv8 OBB labels.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>mask_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Directory containing the mask images</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>label_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to save the label file</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>number_generated_objects</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of screws/nuts/washers to be placed in the new image</p>
+              </div>
+            </td>
+            <td>
+                  <code>30</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    np.ndarray: The generated screw canvas.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>image_creation.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screws_CanvasAndLabel</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="n">label_path</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws and YOLOv8 OBB labels.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mask_dir (str): Directory containing the mask images</span>
+<span class="sd">        label_path (str): Path to save the label file</span>
+<span class="sd">        number_generated_objects (int): Number of screws/nuts/washers to be placed in the new image</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: The generated screw canvas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1) Get mask image paths and names</span>
+    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+    <span class="n">mask_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mask_paths</span><span class="p">]</span>
+
+    <span class="c1"># 2) Create an empty RGB image of size 3076 x 1852</span>
+    <span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span> <span class="o">=</span> <span class="mi">1852</span><span class="p">,</span> <span class="mi">3076</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="c1"># 3 &amp; 4) Open label file once and write labels as we go</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">num_masks</span> <span class="o">=</span> <span class="n">number_generated_objects</span>
+        <span class="n">chosen_indices</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask_paths</span><span class="p">)),</span> <span class="n">k</span><span class="o">=</span><span class="n">num_masks</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">chosen_indices</span><span class="p">:</span>
+            <span class="n">mask_path</span> <span class="o">=</span> <span class="n">mask_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+            <span class="n">mask_name</span> <span class="o">=</span> <span class="n">mask_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">mask_path</span><span class="p">)</span>
+
+            <span class="c1"># Ensure mask is RGB</span>
+            <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">mask</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+            <span class="c1"># Random rotation</span>
+            <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
+            <span class="n">rotated_mask</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">preserve_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+            <span class="n">rot_h</span><span class="p">,</span> <span class="n">rot_w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">rotated_mask</span><span class="o">.</span><span class="n">shape</span>
+
+            <span class="c1"># Random position</span>
+            <span class="n">max_y</span> <span class="o">=</span> <span class="n">canvas_h</span> <span class="o">-</span> <span class="n">rot_h</span>
+            <span class="n">max_x</span> <span class="o">=</span> <span class="n">canvas_w</span> <span class="o">-</span> <span class="n">rot_w</span>
+            <span class="k">if</span> <span class="n">max_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">max_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>  <span class="c1"># skip if mask doesn&#39;t fit</span>
+
+            <span class="n">rand_y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
+            <span class="n">rand_x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_x</span><span class="p">)</span>
+
+            <span class="c1"># Place mask on canvas</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                <span class="n">canvas</span><span class="p">[</span><span class="n">rand_y</span><span class="p">:</span><span class="n">rand_y</span><span class="o">+</span><span class="n">rot_h</span><span class="p">,</span> <span class="n">rand_x</span><span class="p">:</span><span class="n">rand_x</span><span class="o">+</span><span class="n">rot_w</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span>
+                    <span class="n">canvas</span><span class="p">[</span><span class="n">rand_y</span><span class="p">:</span><span class="n">rand_y</span><span class="o">+</span><span class="n">rot_h</span><span class="p">,</span> <span class="n">rand_x</span><span class="p">:</span><span class="n">rand_x</span><span class="o">+</span><span class="n">rot_w</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span>
+                    <span class="n">rotated_mask</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+                <span class="p">)</span>
+
+            <span class="c1"># ---- Label creation happens here ----</span>
+            <span class="n">mask_gray</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">rotated_mask</span><span class="p">)</span>
+            <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">mask_gray</span> <span class="o">&gt;</span> <span class="mf">0.001</span>
+            <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">contours</span> <span class="o">=</span> <span class="n">find_contours</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">contours</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">contour</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">poly</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">contour</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># (row, col) -&gt; (x, y)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">poly</span><span class="o">.</span><span class="n">is_valid</span><span class="p">:</span>
+                <span class="n">poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">min_rect</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">minimum_rotated_rectangle</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">min_rect</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">xy</span>
+            <span class="n">obb_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)))[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># drop duplicate last point</span>
+
+            <span class="c1"># Shift to canvas position &amp; normalize</span>
+            <span class="n">points_n</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">obb_points</span><span class="p">:</span>
+                <span class="n">px</span> <span class="o">=</span> <span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">rand_x</span><span class="p">)</span> <span class="o">/</span> <span class="n">canvas_w</span>
+                <span class="n">py</span> <span class="o">=</span> <span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rand_y</span><span class="p">)</span> <span class="o">/</span> <span class="n">canvas_h</span>
+                <span class="n">points_n</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">])</span>
+
+            <span class="n">class_name</span> <span class="o">=</span> <span class="n">mask_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1"> &#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points_n</span><span class="p">])</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">canvas</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="image_creation.display_obb_with_labels" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">display_obb_with_labels</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">label_path</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reads an image and its corresponding YOLOv8 OBB label file,
+then displays the image with OBB bounding boxes and class names.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>image_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the generated image.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>label_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the label file in YOLOv8 OBB 8 points format.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>image_creation.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">display_obb_with_labels</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">label_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads an image and its corresponding YOLOv8 OBB label file,</span>
+<span class="sd">    then displays the image with OBB bounding boxes and class names.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image_path (str): Path to the generated image.</span>
+<span class="sd">        label_path (str): Path to the label file in YOLOv8 OBB 8 points format.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Image file not found at </span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">class_name</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">points_n</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
+
+                <span class="c1"># Ensure there are enough points for an OBB (8 points for 4 corners)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points_n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+                    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points_n</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">canvas_w</span>
+                    <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">canvas_h</span>
+                    <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">points</span><span class="p">,</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># Close the polygon</span>
+
+                    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poly</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">poly</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">centroid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">centroid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">centroid</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Skipping malformed line in label file: </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Label file not found at </span><span class="si">{</span><span class="n">label_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An error occurred while processing the label file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;OBB Bounding Boxes with Class Names&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
 </html>
