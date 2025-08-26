@@ -3,9 +3,9 @@ site_name: Demonstrator Docs
 
 theme:
   name: "material"
-
-features:
-  - navigation.expand
+  icon:
+    repo: fontawesome/brands/gitlab
+repo_url: https://git.tu-berlin.de/henrik.he/demo_augmentation.git
 
 plugins:
   - search
@@ -22,3 +22,6 @@ nav:
   - Usage Guide: user_guide.md
   - Augmentation Guide: augmentation.md
   - Training Guide: training.md
+  - Streamlit Guide: streamlit.md
+  - Documentation Guide: documentation.md
+  - Contact: contact.md
