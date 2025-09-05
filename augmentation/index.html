@@ -841,7 +841,7 @@
 
 
 <h2 id="image_creation.create_screwImage" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">ouput_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h2>
 
@@ -880,22 +880,6 @@
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>label_dir</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Directory to save label and image file</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>output_dir</code>
             </td>
             <td>
@@ -907,7 +891,7 @@
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>&#39;generated_ImageLabel&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1117,13 +1101,11 @@
 <span class="normal">243</span>
 <span class="normal">244</span>
 <span class="normal">245</span>
-<span class="normal">246</span>
-<span class="normal">247</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">ouput_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span> <span class="o">=</span> <span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span> <span class="o">=</span> <span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        mask_dir (str): Directory containing the mask images</span>
-<span class="sd">        label_dir (str): Directory to save label and image file</span>
 <span class="sd">        output_dir (str): Directory to save the generated images</span>
 <span class="sd">        image_name (str): Name of the generated image and label file</span>
 <span class="sd">        number_generated_objects (int): Number of screws/nuts/washers to be placed in the new image</span>
@@ -1138,13 +1120,13 @@
     <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="c1"># setput image generation</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">)</span> <span class="c1">#  Label file path</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">)</span> <span class="c1">#  Label file path</span>
     <span class="k">if</span> <span class="n">Png</span><span class="p">:</span>
-        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># If not PNG, save as JPG</span>
-        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ouput_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>   
+        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>   
 
     <span class="c1">#step1_start = time.time()</span>
     <span class="c1"># 1) Create the screw canvas and label</span>
@@ -1529,7 +1511,8 @@ then displays the image with OBB bounding boxes and class names.</p>
 
             <details class="quote">
               <summary>Source code in <code>image_creation.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">250</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">249</span>
+<span class="normal">250</span>
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
@@ -1577,8 +1560,7 @@ then displays the image with OBB bounding boxes and class names.</p>
 <span class="normal">295</span>
 <span class="normal">296</span>
 <span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">display_obb_with_labels</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">label_path</span><span class="p">):</span>
+<span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">display_obb_with_labels</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">label_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reads an image and its corresponding YOLOv8 OBB label file,</span>
 <span class="sd">    then displays the image with OBB bounding boxes and class names.</span>
