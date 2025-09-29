@@ -273,6 +273,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Usage Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -284,6 +297,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#written-instructions-of-the-demonstrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Written Instructions of the Demonstrator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Written Instructions of the Demonstrator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-one-the-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field One: The Inventory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-two-the-sample-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Two: The Sample Kit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-three-the-assembly-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Three: The Assembly Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview Image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Edge Cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -419,6 +511,74 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#written-instructions-of-the-demonstrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Written Instructions of the Demonstrator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Written Instructions of the Demonstrator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-one-the-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field One: The Inventory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-two-the-sample-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Two: The Sample Kit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-three-the-assembly-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Three: The Assembly Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview Image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Edge Cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -433,11 +593,24 @@
 
 
 
-<h1 id="how-to-use-the-demonstrator">How to use the demonstrator</h1>
+<h1 id="how-to-use-the-demonstrator">How to use the demonstrator:</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JQBySkXoCaU"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
+
+<h2 id="written-instructions-of-the-demonstrator">Written Instructions of the Demonstrator</h2>
+<h3 id="field-one-the-inventory">Field One: The Inventory</h3>
+<p>This field contains a set of components such as screws, nuts, and washers, which can be used to assemble a desired kit.</p>
+<h3 id="field-two-the-sample-kit">Field Two: The Sample Kit</h3>
+<p>In this field, the user defines a sample assembly. The AI then identifies where the required components for the assembly are located in Field One. In the example image an M6 screw, an M6 nut, and an M6 washer.</p>
+<h3 id="field-three-the-assembly-area">Field Three: The Assembly Area</h3>
+<p>This field allows the AI to check whether all necessary parts are present or if something is missing. In this example, the M6 nut is missing. The user is then guided to Field One, where the missing M6 nut is highlighted, so it can be placed in Field Three.  </p>
+<p>This way, the user can efficiently gather all required parts in the assembly area and start the assembly process with all components in place.</p>
+<h3 id="overview-image">Overview Image</h3>
+<p><img alt="Demonstrator Fields" src="../images/felder.jpg" /></p>
+<h2 id="known-edge-cases">Known Edge Cases</h2>
+<p><img alt="Edge Cases" src="../images/probleme.jpg" /></p>
 
 
 
