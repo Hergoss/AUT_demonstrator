@@ -593,12 +593,9 @@
 
 
 
-<h1 id="how-to-use-the-demonstrator">How to use the demonstrator:</h1>
+<div><h1 id="how-to-use-the-demonstrator">How to use the demonstrator:</h1>
 <p><br></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JQBySkXoCaU"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JQBySkXoCaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p><br></p>
 <h2 id="written-instructions-of-the-demonstrator">Written Instructions of the Demonstrator</h2>
@@ -610,9 +607,27 @@
 <p>This field allows the AI to check whether all necessary parts are present or if something is missing. In this example, the M6 nut is missing. The user is then guided to Field One, where the missing M6 nut is highlighted, so it can be placed in Field Three.  </p>
 <p>This way, the user can efficiently gather all required parts in the assembly area and start the assembly process with all components in place.</p>
 <h3 id="overview-image">Overview Image</h3>
-<p><img alt="Demonstrator Fields" src="../images/felder.jpg" /></p>
+<p><img alt="Demonstrator Fields" src="../images/felder.jpg"></p>
 <h2 id="known-edge-cases">Known Edge Cases</h2>
-<p><img alt="Edge Cases" src="../images/probleme.jpg" /></p>
+<p><img alt="Edge Cases" src="../images/probleme.jpg"></p>
+<p>Currently several problem cases remain, as shown above, which must be considered as limitations of the current implementation:</p>
+<ul>
+<li>
+<p><strong>Obscured or overlapping parts:</strong> If parts are not visible in the image, the model lacks the necessary information. In these cases, the model reacts conservatively and usually does not output a prediction.</p>
+</li>
+<li>
+<p><strong>Variations in screw types:</strong> Although the models were trained on hex screws, they also classify other screw heads (e.g., slotted screws) as valid parts due to their similarity, which is not desirable in all use cases.</p>
+</li>
+<li>
+<p><strong>Tilted or upright parts:</strong> With the introduction of classes like <strong>Standing-Screw</strong> and <strong>Standing-Nut</strong>, questions arise about the definition of when a part is considered upright.</p>
+</li>
+<li>
+<p><strong>Color specificity:</strong> Currently, the model does not differentiate screw colors. Depending on the application, this may become necessary in the future.</p>
+</li>
+<li>
+<p><strong>Screw image material:</strong> Images showing screws sometimes lead to misclassifications due to their high similarity to real parts.</p>
+</li>
+</ul></div>
 
 
 

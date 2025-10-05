@@ -965,15 +965,15 @@
 
 
 
-<h1 id="augmentation-guide">Augmentation Guide</h1>
+<div><h1 id="augmentation-guide">Augmentation Guide</h1>
 <h2 id="background-pattern-creator-user-interface-documentation">Background Pattern Creator - User Interface Documentation</h2>
 <h3 id="overview">Overview</h3>
 <p>The Background Pattern Creator is a GUI application built with Python Tkinter that allows users to create tiled background patterns from individual images. The tool is specifically designed to generate backgrounds with dimensions of 3076×1852 pixels, making it ideal for creating consistent background patterns for computer vision and image processing applications.</p>
-<p><img alt="Background Pattern Creator Main Interface" src="../images/main_interface.png" /></p>
+<p><img alt="Background Pattern Creator Main Interface" src="../images/main_interface.png"></p>
 <h3 id="interface-components">Interface Components</h3>
 <h4 id="1-image-selection-section">1. Image Selection Section</h4>
 <p>The top section of the interface handles image loading and file management.</p>
-<p><img alt="File Selection Frame" src="../images/file_selection_frame.png" /></p>
+<p><img alt="File Selection Frame" src="../images/file_selection_frame.png"></p>
 <p><strong>Components:</strong></p>
 <ul>
 <li><strong>Select Image Button</strong>: Opens a file dialog to choose background images</li>
@@ -989,7 +989,7 @@
 </ul>
 <h4 id="2-controls-comparison-section">2. Controls &amp; Comparison Section</h4>
 <p>This section provides the main controls for pattern manipulation and comparison functionality.</p>
-<p><img alt="Controls and Comparison Section" src="../images/controls_comparison_section.png" /></p>
+<p><img alt="Controls and Comparison Section" src="../images/controls_comparison_section.png"></p>
 <h5 id="scale-controls">Scale Controls</h5>
 <ul>
 <li><strong>Scale Factor Slider</strong>: Adjusts the size of the base image from 0.1× to 5.0×</li>
@@ -1004,7 +1004,7 @@
 </ul>
 <h4 id="3-preview-section-resizable">3. Preview Section (Resizable)</h4>
 <p>The main preview area shows how the tiled pattern will look at the target resolution.</p>
-<p><img alt="Preview Canvas with Tiled Pattern" src="../images/preview_canvas_tiled.png" /></p>
+<p><img alt="Preview Canvas with Tiled Pattern" src="../images/preview_canvas_tiled.png"></p>
 <p><strong>Features:</strong></p>
 <ul>
 <li><strong>Resizable Canvas</strong>: Hover near edges to see resize cursors</li>
@@ -1019,7 +1019,7 @@
 </ul>
 <h4 id="4-comparison-section-resizable">4. Comparison Section (Resizable)</h4>
 <p>The right panel provides a detailed view of a specific area of the pattern with comparison capabilities.</p>
-<p><img alt="Comparison Panel with Controls" src="../images/comparison_panel_controls.png" /></p>
+<p><img alt="Comparison Panel with Controls" src="../images/comparison_panel_controls.png"></p>
 <h5 id="position-controls">Position Controls</h5>
 <ul>
 <li><strong>X Position Slider</strong>: Horizontally moves the comparison viewport</li>
@@ -1033,10 +1033,10 @@
 <li><strong>Overlay Support</strong>: Displays comparison images centered in the view</li>
 <li><strong>Scale Range</strong>: 0.5× to 2.0× for detailed inspection</li>
 </ul>
-<p><img alt="Comparison Canvas with Overlay" src="../images/comparison_canvas_overlay.png" /></p>
+<p><img alt="Comparison Canvas with Overlay" src="../images/comparison_canvas_overlay.png"></p>
 <h4 id="5-status-bar">5. Status Bar</h4>
 <p>The bottom status bar provides real-time feedback about the application state.</p>
-<p><img alt="Status Bar" src="../images/status_bar.png" /></p>
+<p><img alt="Status Bar" src="../images/status_bar.png"></p>
 <p><strong>Information Displayed:</strong></p>
 <ul>
 <li>Current image filename and dimensions</li>
@@ -1098,8 +1098,8 @@
 <li>noise (not active)</li>
 </ul>
 <h2 id="example-of-generated-images">Example of generated images</h2>
-<p><img alt="example1.png" src="../images/example1.png" />
-<img alt="example2.png" src="../images/example2.png" /></p>
+<p><img alt="example1.png" src="../images/example1.png">
+<img alt="example2.png" src="../images/example2.png"></p>
 <h2 id="functions">Functions</h2>
 
 
@@ -1132,7 +1132,7 @@
 
 
 <h2 id="image_creation.create_distrubance_Canvas" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;disturbance_masks&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'disturbance_masks'</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1166,7 +1166,7 @@
               </div>
             </td>
             <td>
-                  <code>&#39;disturbance_masks&#39;</code>
+                  <code>'disturbance_masks'</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1247,17 +1247,17 @@
 <span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
-<span class="normal">155</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;disturbance_masks&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws.</span>
+<span class="normal">155</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'disturbance_masks'</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Create images with screws.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        mask_dir (str): Directory containing the mask images</span>
 <span class="sd">        number_generated_objects (int): Number of screws/nuts/washers (that are not a class) to be placed in the new image</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        np.ndarray: The generated screw canvas.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># 1) Get mask image paths and names</span>
-    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">'*.png'</span><span class="p">)))</span>
     <span class="n">mask_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mask_paths</span><span class="p">]</span>
 
     <span class="c1"># 2) Create an empty RGB image of size 3076 x 1852</span>
@@ -1289,7 +1289,7 @@
         <span class="n">max_y</span> <span class="o">=</span> <span class="n">canvas_h</span> <span class="o">-</span> <span class="n">rot_h</span>
         <span class="n">max_x</span> <span class="o">=</span> <span class="n">canvas_w</span> <span class="o">-</span> <span class="n">rot_w</span>
         <span class="k">if</span> <span class="n">max_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">max_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">continue</span>  <span class="c1"># skip if mask doesn&#39;t fit</span>
+            <span class="k">continue</span>  <span class="c1"># skip if mask doesn't fit</span>
 
         <span class="n">rand_y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
         <span class="n">rand_x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_x</span><span class="p">)</span>
@@ -1312,7 +1312,7 @@
 
 
 <h2 id="image_creation.create_screwImage" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'Masks'</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">'generated_ImageLabel'</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="s1">'generated_image'</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1346,7 +1346,7 @@
               </div>
             </td>
             <td>
-                  <code>&#39;Masks&#39;</code>
+                  <code>'Masks'</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1362,7 +1362,7 @@
               </div>
             </td>
             <td>
-                  <code>&#39;generated_ImageLabel&#39;</code>
+                  <code>'generated_ImageLabel'</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1378,7 +1378,7 @@
               </div>
             </td>
             <td>
-                  <code>&#39;generated_image&#39;</code>
+                  <code>'generated_image'</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1572,8 +1572,8 @@
 <span class="normal">243</span>
 <span class="normal">244</span>
 <span class="normal">245</span>
-<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;Masks&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;generated_ImageLabel&#39;</span><span class="p">,</span> <span class="n">image_name</span> <span class="o">=</span> <span class="s1">&#39;generated_image&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws.</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screwImage</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'Masks'</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">'generated_ImageLabel'</span><span class="p">,</span> <span class="n">image_name</span> <span class="o">=</span> <span class="s1">'generated_image'</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">number_generated_otherScrews</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">number_generated_shapes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">simpleBackground</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ImageSave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Create images with screws.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        mask_dir (str): Directory containing the mask images</span>
@@ -1587,42 +1587,42 @@
 <span class="sd">        Png (bool): Whether to save the generated image as PNG (True) or JPG (False)</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        np.ndarray: The generated screw image.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="c1"># setput image generation</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">)</span> <span class="c1">#  Label file path</span>
+    <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">'.txt'</span><span class="p">)</span> <span class="c1">#  Label file path</span>
     <span class="k">if</span> <span class="n">Png</span><span class="p">:</span>
-        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">'.png'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># If not PNG, save as JPG</span>
-        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>   
+        <span class="n">generatied_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">'.jpg'</span><span class="p">)</span>   
 
     <span class="c1">#step1_start = time.time()</span>
     <span class="c1"># 1) Create the screw canvas and label</span>
     <span class="n">screw_canvas</span> <span class="o">=</span> <span class="n">create_screws_CanvasAndLabel</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="n">label_path</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="p">)</span>
     <span class="c1">#step1_end = time.time()</span>
-    <span class="c1">#print(f&quot;Step 1 (create_screws_CanvasAndLabel) took: {step1_end - step1_start:.2f} seconds&quot;)</span>
+    <span class="c1">#print(f"Step 1 (create_screws_CanvasAndLabel) took: {step1_end - step1_start:.2f} seconds")</span>
 
     <span class="c1">#step2_start = time.time()</span>
     <span class="c1"># 2) Create a background image with random shapes</span>
     <span class="k">if</span> <span class="n">simpleBackground</span><span class="p">:</span>
             <span class="n">background_image</span> <span class="o">=</span> <span class="n">bg_creation</span><span class="o">.</span><span class="n">create_simpleBackground_image</span><span class="p">(</span><span class="n">num_shapes</span><span class="o">=</span><span class="n">number_generated_shapes</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">background_image</span> <span class="o">=</span> <span class="n">bg_creation</span><span class="o">.</span><span class="n">create_ObjectBackground_image</span><span class="p">(</span><span class="n">background_path</span><span class="o">=</span><span class="s1">&#39;Backgrounds&#39;</span><span class="p">)</span>
+        <span class="n">background_image</span> <span class="o">=</span> <span class="n">bg_creation</span><span class="o">.</span><span class="n">create_ObjectBackground_image</span><span class="p">(</span><span class="n">background_path</span><span class="o">=</span><span class="s1">'Backgrounds'</span><span class="p">)</span>
     <span class="c1">#step2_end = time.time()</span>
-    <span class="c1">#print(f&quot;Step 2 (create background canvas) took: {step2_end - step2_start:.2f} seconds&quot;)</span>
+    <span class="c1">#print(f"Step 2 (create background canvas) took: {step2_end - step2_start:.2f} seconds")</span>
 
 
     <span class="c1"># step2_5_start = time.time()</span>
     <span class="c1"># 2.5) Add other screws/nuts/washers to the background image</span>
-    <span class="n">disturbance_canvas</span> <span class="o">=</span> <span class="n">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;disturbance_masks&#39;</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="n">number_generated_otherScrews</span><span class="p">)</span>
+    <span class="n">disturbance_canvas</span> <span class="o">=</span> <span class="n">create_distrubance_Canvas</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'disturbance_masks'</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="n">number_generated_otherScrews</span><span class="p">)</span>
     <span class="c1"># Both disturbance_canvas and background_image are RGB, so blend per channel</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="n">disturbance_canvas</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
     <span class="n">background_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">disturbance_canvas</span><span class="p">,</span> <span class="n">background_image</span><span class="p">)</span>
     <span class="c1">#step2_5_end = time.time()</span>
-    <span class="c1">#print(f&quot;Step 2.5 (create and add other screws to backgraound canvas) took: {step2_5_end - step2_5_start:.2f} seconds&quot;)</span>
+    <span class="c1">#print(f"Step 2.5 (create and add other screws to backgraound canvas) took: {step2_5_end - step2_5_start:.2f} seconds")</span>
 
     <span class="c1"># Step 3a: Integrate the background image with the canvas</span>
     <span class="c1">#step3a_start = time.time()</span>
@@ -1630,7 +1630,7 @@
     <span class="n">blending_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">screw_canvas</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">blended_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">blending_mask</span><span class="p">,</span> <span class="n">screw_canvas</span><span class="p">,</span> <span class="n">background_image</span><span class="p">)</span>
     <span class="c1">#step3a_end = time.time()</span>
-    <span class="c1">#print(f&quot;Step 3a (add screw canvas to background canvas) took: {step3a_end - step3a_start:.2f} seconds&quot;)</span>
+    <span class="c1">#print(f"Step 3a (add screw canvas to background canvas) took: {step3a_end - step3a_start:.2f} seconds")</span>
 
     <span class="c1"># # Step 3b: Apply Gaussian smoothing</span>
     <span class="c1"># step3b_start = time.time()</span>
@@ -1638,7 +1638,7 @@
     <span class="c1"># ksize = int(6 * blur_intensity) | 1         # Ensure kernel size is odd</span>
     <span class="c1"># blended_image = cv2.GaussianBlur(blended_image, (ksize, ksize), blur_intensity)</span>
     <span class="c1"># step3b_end = time.time()</span>
-    <span class="c1"># print(f&quot;Step 3b (smoothing) took: {step3b_end - step3b_start:.2f} seconds&quot;)</span>
+    <span class="c1"># print(f"Step 3b (smoothing) took: {step3b_end - step3b_start:.2f} seconds")</span>
 
     <span class="c1"># # Step 3c: Add random noise</span>
     <span class="c1"># step3c_start = time.time()</span>
@@ -1648,17 +1648,17 @@
     <span class="c1"># np.clip(blended_image, 0, 255, out=blended_image)</span>
     <span class="c1"># blended_image = blended_image.astype(np.uint8)</span>
     <span class="c1"># step3c_end = time.time()</span>
-    <span class="c1"># print(f&quot;Step 3c (adding noise) took: {step3c_end - step3c_start:.2f} seconds&quot;)</span>
+    <span class="c1"># print(f"Step 3c (adding noise) took: {step3c_end - step3c_start:.2f} seconds")</span>
 
 
 
     <span class="c1"># 3) Save the image</span>
     <span class="k">if</span> <span class="n">ImageSave</span><span class="p">:</span>
         <span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">generatied_imagePath</span><span class="p">,</span> <span class="n">blended_image</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image saved to </span><span class="si">{</span><span class="n">generatied_imagePath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image saved to </span><span class="si">{</span><span class="n">generatied_imagePath</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total time taken: </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total time taken: </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">blended_image</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -1830,7 +1830,7 @@
 <span class="normal">96</span>
 <span class="normal">97</span>
 <span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_screws_CanvasAndLabel</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="n">label_path</span><span class="p">,</span> <span class="n">number_generated_objects</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws and YOLOv8 OBB labels.</span>
+<span class="w">    </span><span class="sd">"""Create images with screws and YOLOv8 OBB labels.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        mask_dir (str): Directory containing the mask images</span>
@@ -1838,9 +1838,9 @@
 <span class="sd">        number_generated_objects (int): Number of screws/nuts/washers to be placed in the new image</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        np.ndarray: The generated screw canvas.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># 1) Get mask image paths and names</span>
-    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">'*.png'</span><span class="p">)))</span>
     <span class="n">mask_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mask_paths</span><span class="p">]</span>
 
     <span class="c1"># 2) Create an empty RGB image of size 3076 x 1852</span>
@@ -1848,7 +1848,7 @@
     <span class="n">canvas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
     <span class="c1"># 3 &amp; 4) Open label file once and write labels as we go</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">num_masks</span> <span class="o">=</span> <span class="n">number_generated_objects</span>
         <span class="n">chosen_indices</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask_paths</span><span class="p">)),</span> <span class="n">k</span><span class="o">=</span><span class="n">num_masks</span><span class="p">)</span>
 
@@ -1872,7 +1872,7 @@
             <span class="n">max_y</span> <span class="o">=</span> <span class="n">canvas_h</span> <span class="o">-</span> <span class="n">rot_h</span>
             <span class="n">max_x</span> <span class="o">=</span> <span class="n">canvas_w</span> <span class="o">-</span> <span class="n">rot_w</span>
             <span class="k">if</span> <span class="n">max_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">max_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">continue</span>  <span class="c1"># skip if mask doesn&#39;t fit</span>
+                <span class="k">continue</span>  <span class="c1"># skip if mask doesn't fit</span>
 
             <span class="n">rand_y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
             <span class="n">rand_x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_x</span><span class="p">)</span>
@@ -1887,7 +1887,7 @@
             <span class="c1"># ---- Label creation happens here ----</span>
             <span class="n">mask_gray</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">rotated_mask</span><span class="p">)</span>
             <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">mask_gray</span> <span class="o">&gt;</span> <span class="mf">0.001</span>
-            <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">contours</span> <span class="o">=</span> <span class="n">find_contours</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">contours</span><span class="p">:</span>
                 <span class="k">continue</span>
@@ -1907,9 +1907,9 @@
                 <span class="n">py</span> <span class="o">=</span> <span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rand_y</span><span class="p">)</span> <span class="o">/</span> <span class="n">canvas_h</span>
                 <span class="n">points_n</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">])</span>
 
-            <span class="n">class_name</span> <span class="o">=</span> <span class="n">mask_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1"> &#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points_n</span><span class="p">])</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">class_name</span> <span class="o">=</span> <span class="n">mask_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1"> '</span> <span class="o">+</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points_n</span><span class="p">])</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">canvas</span>
 </code></pre></div></td></tr></table></div>
@@ -2032,18 +2032,18 @@ then displays the image with OBB bounding boxes and class names.</p>
 <span class="normal">296</span>
 <span class="normal">297</span>
 <span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">display_obb_with_labels</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">label_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Reads an image and its corresponding YOLOv8 OBB label file,</span>
 <span class="sd">    then displays the image with OBB bounding boxes and class names.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        image_path (str): Path to the generated image.</span>
 <span class="sd">        label_path (str): Path to the label file in YOLOv8 OBB 8 points format.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">image</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Image file not found at </span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: Image file not found at </span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span>
 
     <span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
@@ -2052,7 +2052,7 @@ then displays the image with OBB bounding boxes and class names.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
                 <span class="n">class_name</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -2065,20 +2065,20 @@ then displays the image with OBB bounding boxes and class names.</p>
                     <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">canvas_h</span>
                     <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">points</span><span class="p">,</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># Close the polygon</span>
 
-                    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poly</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">poly</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poly</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">poly</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
                     <span class="n">centroid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-                    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">centroid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">centroid</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">centroid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">centroid</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'yellow'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Skipping malformed line in label file: </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Warning: Skipping malformed line in label file: </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Label file not found at </span><span class="si">{</span><span class="n">label_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: Label file not found at </span><span class="si">{</span><span class="n">label_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An error occurred while processing the label file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"An error occurred while processing the label file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;OBB Bounding Boxes with Class Names&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'OBB Bounding Boxes with Class Names'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">return</span>
 </code></pre></div></td></tr></table></div>
@@ -2091,7 +2091,7 @@ then displays the image with OBB bounding boxes and class names.</p>
 
 
 <h2 id="image_creation.generate_screw_position_image" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">generate_screw_position_image</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;positionMasks&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;positionImages&#39;</span><span class="p">,</span> <span class="n">x_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">generate_screw_position_image</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'positionMasks'</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">'positionImages'</span><span class="p">,</span> <span class="n">x_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2125,7 +2125,7 @@ then displays the image with OBB bounding boxes and class names.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;positionMasks&#39;</code>
+                  <code>'positionMasks'</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2141,7 +2141,7 @@ then displays the image with OBB bounding boxes and class names.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;positionImages&#39;</code>
+                  <code>'positionImages'</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2318,8 +2318,8 @@ then displays the image with OBB bounding boxes and class names.</p>
 <span class="normal">488</span>
 <span class="normal">489</span>
 <span class="normal">490</span>
-<span class="normal">491</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_screw_position_image</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">&#39;positionMasks&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;positionImages&#39;</span><span class="p">,</span> <span class="n">x_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Png</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create images with screws and YOLOv8 OBB labels.</span>
+<span class="normal">491</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_screw_position_image</span><span class="p">(</span><span class="n">mask_dir</span><span class="o">=</span><span class="s1">'positionMasks'</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">'positionImages'</span><span class="p">,</span> <span class="n">x_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y_pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Png</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Create images with screws and YOLOv8 OBB labels.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        mask_dir (str): Directory containing the mask images</span>
@@ -2330,29 +2330,29 @@ then displays the image with OBB bounding boxes and class names.</p>
 <span class="sd">        angle (int): Angle to rotate the object (0-360°)</span>
 <span class="sd">    Returns:</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># 1) Get mask image paths and names</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+    <span class="n">mask_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mask_dir</span><span class="p">,</span> <span class="s1">'*.png'</span><span class="p">)))</span>
     <span class="n">mask_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mask_paths</span><span class="p">]</span>
 
     <span class="c1"># 3 &amp; 4) Open label file once and write labels as we go</span>
     <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask_paths</span><span class="p">)):</span>
-        <span class="n">name_ding</span> <span class="o">=</span> <span class="n">mask_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">image_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name_ding</span><span class="si">}</span><span class="s1">_at_xpos</span><span class="si">{</span><span class="n">x_pos</span><span class="si">}</span><span class="s1">_ypos</span><span class="si">{</span><span class="n">y_pos</span><span class="si">}</span><span class="s1">_angle</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s1">&#39;</span>
-        <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">)</span> <span class="c1">#  Label file path</span>
+        <span class="n">name_ding</span> <span class="o">=</span> <span class="n">mask_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">image_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name_ding</span><span class="si">}</span><span class="s1">_at_xpos</span><span class="si">{</span><span class="n">x_pos</span><span class="si">}</span><span class="s1">_ypos</span><span class="si">{</span><span class="n">y_pos</span><span class="si">}</span><span class="s1">_angle</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s1">'</span>
+        <span class="n">label_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">'.txt'</span><span class="p">)</span> <span class="c1">#  Label file path</span>
         <span class="k">if</span> <span class="n">Png</span><span class="p">:</span>
-            <span class="n">generated_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+            <span class="n">generated_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">'.png'</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># If not PNG, save as JPG</span>
-            <span class="n">generated_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>   
+            <span class="n">generated_imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="o">+</span><span class="s1">'.jpg'</span><span class="p">)</span>   
 
         <span class="c1"># 2) Create an empty RGB image of size 3076 x 1852</span>
         <span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span> <span class="o">=</span> <span class="mi">1852</span><span class="p">,</span> <span class="mi">3076</span>
         <span class="n">canvas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">mask_path</span> <span class="o">=</span> <span class="n">mask_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
             <span class="n">mask_name</span> <span class="o">=</span> <span class="n">mask_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
             <span class="n">mask</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">mask_path</span><span class="p">)</span>
@@ -2371,7 +2371,7 @@ then displays the image with OBB bounding boxes and class names.</p>
             <span class="n">max_y</span> <span class="o">=</span> <span class="n">canvas_h</span> <span class="o">-</span> <span class="n">rot_h</span>
             <span class="n">max_x</span> <span class="o">=</span> <span class="n">canvas_w</span> <span class="o">-</span> <span class="n">rot_w</span>
             <span class="k">if</span> <span class="n">max_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">max_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">continue</span>  <span class="c1"># skip if mask doesn&#39;t fit</span>
+                <span class="k">continue</span>  <span class="c1"># skip if mask doesn't fit</span>
 
             <span class="n">rand_y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
             <span class="n">rand_x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x_pos</span><span class="p">,</span> <span class="n">max_x</span><span class="p">)</span>
@@ -2386,7 +2386,7 @@ then displays the image with OBB bounding boxes and class names.</p>
             <span class="c1"># ---- Label creation happens here ----</span>
             <span class="n">mask_gray</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">rotated_mask</span><span class="p">)</span>
             <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">mask_gray</span> <span class="o">&gt;</span> <span class="mf">0.001</span>
-            <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">mask_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">contours</span> <span class="o">=</span> <span class="n">find_contours</span><span class="p">(</span><span class="n">mask_bin</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">contours</span><span class="p">:</span>
                 <span class="k">continue</span>
@@ -2406,20 +2406,20 @@ then displays the image with OBB bounding boxes and class names.</p>
                 <span class="n">py</span> <span class="o">=</span> <span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">rand_y</span><span class="p">)</span> <span class="o">/</span> <span class="n">canvas_h</span>
                 <span class="n">points_n</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">])</span>
 
-            <span class="n">class_name</span> <span class="o">=</span> <span class="n">mask_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1"> &#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points_n</span><span class="p">])</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">class_name</span> <span class="o">=</span> <span class="n">mask_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1"> '</span> <span class="o">+</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points_n</span><span class="p">])</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
         <span class="c1"># Make all pixels that are not part of the screw white</span>
         <span class="n">white_background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">canvas_h</span><span class="p">,</span> <span class="n">canvas_w</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">255</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
         <span class="n">canvas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">canvas</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">white_background</span><span class="p">,</span> <span class="n">canvas</span><span class="p">)</span>
         <span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">generated_imagePath</span><span class="p">,</span> <span class="n">canvas</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image saved to </span><span class="si">{</span><span class="n">generated_imagePath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image saved to </span><span class="si">{</span><span class="n">generated_imagePath</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="c1">#checks and other stuff</span>
-    <span class="c1"># convert_labels_to_indices(label_folder=f&quot;./{output_dir}&quot;)</span>
-    <span class="c1"># organize_generated_files(base_folder=f&quot;./{output_dir}&quot;)</span>
-    <span class="c1"># find_labels_without_images(base_folder=f&quot;./{output_dir}&quot;)</span>
+    <span class="c1"># convert_labels_to_indices(label_folder=f"./{output_dir}")</span>
+    <span class="c1"># organize_generated_files(base_folder=f"./{output_dir}")</span>
+    <span class="c1"># find_labels_without_images(base_folder=f"./{output_dir}")</span>
 
     <span class="k">return</span> 
 </code></pre></div></td></tr></table></div>
@@ -2434,7 +2434,7 @@ then displays the image with OBB bounding boxes and class names.</p>
 
     </div>
 
-</div>
+</div></div>
 
 
 
