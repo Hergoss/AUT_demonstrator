@@ -1,0 +1,23 @@
+name: demonstrator_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.22
+  - numpy=1.26.3
+  - scipy=1.13.1
+  - scikit-image=0.24.0
+  - matplotlib=3.9.4
+  - shapely=2.0.7
+  - pillow=11.0.0
+  - tk=8.6.13
+  - pip
+  - pip:
+      - opencv-python==4.11.0.86
+      - ultralytics==8.3.202
+      - rembg
+      - streamlit==1.45.1
+      - av==14.4.0
+      - mkdocs==1.6.1
+      - mkdocs-material==9.6.18
+      - mkdocs-video==1.5.0

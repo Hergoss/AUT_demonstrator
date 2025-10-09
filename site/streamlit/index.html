@@ -339,6 +339,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Streamlit Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -350,6 +363,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flowchart
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -419,6 +478,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flowchart
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -433,10 +527,45 @@
 
 
 
-<h1 id="streamlit-guide">Streamlit Guide</h1>
+<div><h1 id="streamlit-guide">Streamlit Guide</h1>
+<p>This project uses <strong>YOLO object detection</strong> together with a <strong>Basler industrial camera</strong> to verify the completeness of assembly kits.<br>
+It compares detected parts against a reference (master kit) and marks them as:</p>
 <ul>
-<li>Code ablauf diagramm?</li>
+<li>✅ <strong>Correct parts</strong> (green)</li>
+<li>❌ <strong>Incorrect / Extra parts</strong> (red)</li>
+<li>⚠️ <strong>Missing parts</strong> (purple)</li>
 </ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Real-time object detection with YOLOv8</li>
+<li>Integration with Basler camera via <code>pypylon</code></li>
+<li>Interactive Streamlit interface</li>
+<li>GPU/CPU device selection</li>
+<li>Visualization of missing, correct, and incorrect parts</li>
+<li>Structured output regions: <strong>Inventory</strong>, <strong>Master Kit</strong>, and <strong>Assembly area</strong></li>
+</ul>
+<h2 id="code-workflow">Code Workflow</h2>
+<ol>
+<li><strong>Initialize</strong> Basler camera and YOLO model  </li>
+<li><strong>Capture images</strong> from camera  </li>
+<li><strong>Detect objects</strong> using YOLO  </li>
+<li><strong>Sort items</strong> into:<ul>
+<li>Inventory objects  </li>
+<li>Master kit objects  </li>
+<li>Assembly objects  </li>
+</ul>
+</li>
+<li><strong>Compare counts</strong>:<ul>
+<li>Mark <strong>missing</strong> parts  </li>
+<li>Mark <strong>extra</strong> parts  </li>
+<li>Mark <strong>correct</strong> parts  </li>
+</ul>
+</li>
+<li>Display results in <strong>Streamlit dashboard</strong></li>
+</ol>
+<h2 id="flowchart">Flowchart</h2>
+<p>The process flow is summarized below:</p>
+<p><img alt="Workflow Diagram" src="../images/ablaufdiagramm.jpg"></p></div>
 
 
 

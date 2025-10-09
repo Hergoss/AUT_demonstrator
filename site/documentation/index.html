@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentation-guide" class="md-skip">
+        <a href="#how-to-locally-build-and-push-a-documentation-update" class="md-skip">
           Skip to content
         </a>
       
@@ -358,8 +358,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -392,14 +390,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-locally-build-and-push-a-documentation-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to locally build and push a documentation update
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
@@ -457,14 +462,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-locally-build-and-push-a-documentation-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to locally build and push a documentation update
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
@@ -491,15 +503,52 @@
 
 
 
-<h1 id="documentation-guide">Documentation Guide</h1>
-<ul>
-<li>How to localy build and push an documentaiton update</li>
-</ul>
+  <h1>Documentation Guide</h1>
+
+<div><p>This project uses <strong>MkDocs</strong> to build and publish documentation.
+Follow the steps below to update and deploy the docs.</p>
+<hr>
+<h2 id="how-to-locally-build-and-push-a-documentation-update">How to locally build and push a documentation update</h2>
+<ol>
+<li>
+<p>Clone the repository (if not already done):</p>
+<p><code>bash
+git clone https://github.com/yourusername/yourrepo.git
+cd yourrepo</code></p>
+</li>
+<li>
+<p>Install MkDocs:</p>
+<p><code>bash
+pip install mkdocs mkdocs-material</code></p>
+</li>
+<li>
+<p>Edit or update the Markdown files inside the <code>docs/</code> folder.</p>
+</li>
+<li>
+<p>Preview changes locally:</p>
+<p><code>bash
+mkdocs serve</code></p>
+<p>Open your browser at <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> to see the live
+preview.</p>
+</li>
+<li>
+<p>Build the documentation site:</p>
+<p><code>bash
+mkdocs build</code></p>
+</li>
+<li>
+<p>Deploy (GitHub Pages example):</p>
+<p><code>bash
+mkdocs gh-deploy</code></p>
+</li>
+</ol>
+<hr>
 <h2 id="commands">Commands</h2>
 <ul>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-</ul>
+<li><code>mkdocs serve</code> → Start the live-reloading docs server\</li>
+<li><code>mkdocs build</code> → Build the documentation site\</li>
+<li><code>mkdocs gh-deploy</code> → Deploy to GitHub Pages</li>
+</ul></div>
 
 
 

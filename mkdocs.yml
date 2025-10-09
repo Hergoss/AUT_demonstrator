@@ -10,11 +10,20 @@ repo_url: https://git.tu-berlin.de/henrik.he/demo_augmentation.git
 plugins:
   - search
   - mkdocstrings:
+      default_handler: python
       handlers:
         python:
+          paths: [code]
           options:
             docstring_style: google
             show_source: true
+  - mkdocs-video:
+      is_video: True
+      video_controls: True
+      video_muted: False
+      css_style:
+        width: "100%"
+        height: "auto"
 
 nav:
   - Overview: index.md
