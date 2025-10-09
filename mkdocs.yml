@@ -4,8 +4,8 @@ site_name: Demonstrator Docs
 theme:
   name: "material"
   icon:
-    repo: fontawesome/brands/gitlab
-repo_url: https://git.tu-berlin.de/henrik.he/demo_augmentation.git
+    repo: fontawesome/brands/github
+repo_url: https://github.com/Hergoss/AUT_demonstrator.git
 
 plugins:
   - search

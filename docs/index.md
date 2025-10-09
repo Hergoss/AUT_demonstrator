@@ -30,7 +30,9 @@ The training, augementation, and streamlit guides provide:
 ## 🔗 About the Project
 
 This student project is part of the [ProKI Initiative](https://www.tu.berlin/iat/forschung/projekte/proki-netz#c2329888), which aims to explore and promote the use of AI in industrial applications. The demonstrator serves as a practical tool for showcasing computer vision and automation concepts in a tangible, hands-on way. This documentaion was devopled in the student project to help users to setup and futher develope the demonstrator and therfore **robustify** the existing demonstrator and make it more **portable**, enabling its use in various showcase and demonstration environments.
+
 ![type:video](images/AUT_gruppe15_small.mp4)
+
 ---
 
 ## 🚀 Get Started
