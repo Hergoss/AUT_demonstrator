@@ -1,7 +1,7 @@
 # Training Guide
 
 ## Current Performance
-The images below illustrate the current precision and recall performance of the model, evaluated using the robstness metrics dataset. These visualizations provide a clear overview of how well the model detects and classifies M4 and M6 screws, nuts, and washers.
+The images below illustrate the current precision and recall performance of the model, evaluated using the robstness metrics dataset. These visualizations provide a clear overview of how well the model detects and classifies M4 and M6 screws, nuts, and washers. The results of hyperparameter tuning and the performance of validation data set is in /docs/HP_results.xlsx .
 ![perf1](images/precision_overlap.png)
 ![perf1](images/recall_overlap.png)
 
