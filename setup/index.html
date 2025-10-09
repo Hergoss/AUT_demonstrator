@@ -640,9 +640,10 @@
 <li>
 <p>Create the python envrionment:</p>
 <ul>
-<li>Create a new conda environment with <code>conda create -n myenv python=3.12</code> (python version has to be supported by pytorch)</li>
+<li>Create a new conda environment with <code>conda create -n demonstrator_env python=3.9.22</code> (python version has to be supported by pytorch)</li>
 <li>For CUDA execution the torch version needs to be adapted according to your NVIDIA Cuda Compiler version(nvcc). Check nvcc version in command with <code>nvcc --version</code> and get the pip install code for the corresponding torch version at https://pytorch.org/get-started/locally/</li>
 <li>For CPU execution get the pip install code for the corresponding torch version at https://pytorch.org/get-started/locally/</li>
+<li>Download and install the pylon camera driver at https://www.baslerweb.com/de-de/downloads/software/2907135243/</li>
 <li>Install the other needed python packages via <code>conda env update -f environment.yml</code></li>
 </ul>
 </li>
