@@ -28,7 +28,7 @@ This section provides detailed instructions for the mechanical setup of the demo
 ## Software Setup
 This section outlines the necessary steps to set up the Python environment required to run the machine learning model and the Streamlit interface for the demonstrator. Before proceeding, ensure that the mechanical setup has been completed as described in the previous section. This is essential in order to connect the camera and enable interaction between the Streamlit interface and the demonstrator hardware. Follow the instructions below to properly configure the software environment.
 ### Setting up the machine learning model and streamlit interface:
-1. Clone the repository from [Gitlab](https://git.tu-berlin.de/kenrickhowinchai/aut-project-demonstrator)
+1. Clone the repository from [Github](https://github.com/Hergoss/AUT_demonstrator.git)
 
 2. Create the python envrionment:
     - Create a new conda environment with `conda create -n demonstrator_env python=3.9.22` (python version has to be supported by pytorch)
