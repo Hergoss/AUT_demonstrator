@@ -162,8 +162,7 @@ The bottom status bar provides real-time feedback about the application state.
 
 ### Example of generated images
 ![example1.png](images/example1.png)
-![example2.png](images/example2.png)
-
+![example1.png](images/generated_image_903.jpg)
 ### Usage
 You can generate synthetic images using the synthetic_variants.variants_2.image_creation function showcased in the code/synthetic_variants/variants2/variants2_examples.py file.
 
